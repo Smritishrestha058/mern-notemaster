@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Using querySelectorAll</title>
+    <style>
+        .highlight { background-color: lightblue; }
+    </style>
+</head>
+<body>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <button onclick="highlightParagraphs()">Highlight Paragraphs</button>
+    <button onclick="addParagraph()">Add New Paragraph</button>
+
+    <script>
+        // Function to highlight all paragraphs
+        function highlightParagraphs() {
+            let paragraphs = document.querySelectorAll("p"); // Static snapshot of all <p> elements
+            paragraphs.forEach(p => p.classList.add("highlight"));
+        }
+
+        // Function to add a new paragraph and immediately highlight it
+        function addParagraph() {
+            let newP = document.createElement("p");
+            newP.innerText = "New Paragraph";
+            document.body.appendChild(newP);
+
+            // Highlight all paragraphs again, including the newly added one
+            highlightParagraphs(); // Re-run to include the new paragraph
+        }
+    </script>
+</body>
+</html>

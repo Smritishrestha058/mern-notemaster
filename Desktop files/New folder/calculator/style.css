@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.calculator{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+input{
+    width: 200px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+.numbers{
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    width: 200px;
+}
+button{
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    background-color: #f1f1f1;
+    color: gray;
+    border: 2p hsl(0, 16%, 49%);
+}
+button:hover{
+    background-color: hsl(0, 0%, 90%);
+}
+.equalbtn button{
+    width: 200px;
+    border-radius: 0;
+}

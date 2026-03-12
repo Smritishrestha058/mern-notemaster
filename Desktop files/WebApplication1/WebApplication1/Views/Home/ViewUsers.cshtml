@@ -1,0 +1,35 @@
+@model List<WebApplication1.Models.KycDetail>
+
+@{
+    ViewData["Title"] = "View All Users";
+}
+
+
+<h2>Registered Users</h2>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Program</th>
+            <th>Hobbies</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Gender</td>
+                <td>@user.Address</td>
+                <td>@user.Program</td>
+                <td>@user.Hobbies</td>
+                <td><a asp-action="Edit" class="btn btn-primary" style="margin-top: 1rem;" asp-route-id="@user.Id">Edit</a></td>
+                <td><a asp-action="Delete" class="btn btn-primary" style="margin-top: 1rem;" asp-route-id="@user.Id" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

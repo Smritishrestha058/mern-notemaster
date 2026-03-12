@@ -1,0 +1,21 @@
+.box {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .appear-from-below {
+    position: absolute;
+    bottom: -50px; /* Adjust the initial position below the box */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+  }
+  
+  .box:hover .appear-from-below {
+    opacity: 1;
+    bottom: 0;
+  }
+  
+  
+  

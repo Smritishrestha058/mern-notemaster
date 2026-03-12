@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .box {
+  width: 200px;
+  height: 200px;
+  background-color: #f44336;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.box-text {
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.box:hover {
+  background-color: #3f51b5;
+}
+
+.box:hover .box-text::before {
+  content: "Hovered Text";
+  opacity: 1;
+}
+
+.box:hover .box-text::after {
+  content: "New Text";
+  opacity: 1;
+}
+button {
+  width: 6em
+}
+
+button:hover span {
+  display: none
+}
+
+button:hover:before {
+  content: ""
+}
+    </style>
+</head>
+<body>
+  <div class="box">
+    <p class="box-text">Original Text</p>
+  </div>
+  <button><span>3 replies</span></button>
+</body>
+</html>

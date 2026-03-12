@@ -1,0 +1,62 @@
+.navbar{
+height: 10vh;
+background-color: rgb(12, 22, 215);
+color: rgb(219, 219, 244);
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.navlinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;   
+    font-size: 30px;
+    cursor: pointer;
+}
+.logo img
+{
+    height: 80px;
+}
+.login button
+{
+    background-color: purple;
+    color: white;
+    font-size: 30px;
+}
+.logout button
+{
+    background-color: purple;
+    color: white;
+    font-size: 30px;
+}
+.home:hover
+{
+    color: purple;
+    background: white;
+    padding: 10px 5px;
+}
+#bd
+{
+    height: 90vh;
+    background-color: rgb(148, 148, 235);
+    display: flex;
+    justify-content: space-between;
+}
+.bc
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.register
+{
+    display: flex;
+    flex-wrap: nowrap;
+justify-content: space-evenly;
+}
+.register button{
+    font-size: 25px;
+    width: 300px;
+    height: 35px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <div id="typewriter"></div>
+  </div>
+    
+
+    <script>
+        const text = "Need Help?";
+let index = 0;
+const speed = 100; // Adjust the speed of typing in milliseconds
+
+function typeWriter() {
+  if (index < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.onload = typeWriter; // Start typing when the page loads
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Password Validation</h1>
+    <form id="passwordForm">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Validate</button>
+    </form>
+    <p id="message" class="error"></p>
+
+    <script>
+        function validatePassword(password) {
+            const errors = [];
+
+            // Check if the password is at least 8 characters long
+            if (password.length < 8) {
+                errors.push("Password must be at least 8 characters long.");
+            }
+
+            // Check if the password contains at least one uppercase letter
+            if (!/[A-Z]/.test(password)) {
+                errors.push("Password must contain at least one uppercase letter.");
+            }
+
+            // Check if the password contains at least one lowercase letter
+            if (!/[a-z]/.test(password)) {
+                errors.push("Password must contain at least one lowercase letter.");
+            }
+
+            // Check if the password contains at least one digit
+            if (!/\d/.test(password)) {
+                errors.push("Password must contain at least one digit.");
+            }
+
+            // Check if the password contains at least one special character
+            if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                errors.push("Password must contain at least one special character.");
+            }
+
+            // If there are errors, return them; otherwise, return success message
+            if (errors.length > 0) {
+                return errors.join(" ");
+            } else {
+                return "Password is valid!";
+            }
+        }
+
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const password = document.getElementById('password').value;
+            const messageElement = document.getElementById('message');
+
+            const result = validatePassword(password);
+
+            if (result === "Password is valid!") {
+                messageElement.textContent = result;
+                messageElement.className = 'success';
+            } else {
+                messageElement.textContent = result;
+                messageElement.className = 'error';
+            }
+        });
+    </script>
+</body>
+</html>

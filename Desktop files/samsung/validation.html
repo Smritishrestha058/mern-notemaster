@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+        .strength-meter {
+            margin-top: 10px;
+            height: 10px;
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            position: relative;
+        }
+        .strength-bar {
+            height: 100%;
+            width: 0;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        .weak { background-color: red; width: 33%; }
+        .medium { background-color: orange; width: 66%; }
+        .strong { background-color: green; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password">
+    <label>
+        <input type="checkbox" id="togglePassword"> Show Password
+    </label>
+    <p id="strength-text"></p>
+
+    <script>
+        document.getElementById("password").addEventListener("input", function() {
+            let password = this.value;
+            let strengthText = document.getElementById("strength-text");
+
+            // Define regex patterns
+            let lengthCheck = password.length >= 8;
+            let uppercaseCheck = /[A-Z]/.test(password);
+            let lowercaseCheck = /[a-z]/.test(password);
+            let numberCheck = /[0-9]/.test(password);
+            let specialCheck = /[@$!%*?&]/.test(password);
+
+            // Show error if any condition is not met
+        
+
+            // Calculate strength level
+            let strength = 0;
+            if (lengthCheck) strength++;
+            if (uppercaseCheck) strength++;
+            if (lowercaseCheck) strength++;
+            if (numberCheck) strength++;
+            if (specialCheck) strength++;
+
+            // Update strength bar and text
+            if (strength === 0) {
+                
+                strengthText.textContent = "";
+            } else if (strength <= 2) {
+                
+                strengthText.textContent = "Your password is too weak";
+            } else if (strength === 3 || strength === 4) {
+                
+                strengthText.textContent = "You password is average, consider adding more complexities";
+            } else if(strength === 5){
+                
+                strengthText.textContent = "Your password is Strong";
+            }
+        });
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("change", function() {
+            passwordInput.type = this.checked ? "text" : "password";
+        });
+    </script>
+
+</body>
+</html>

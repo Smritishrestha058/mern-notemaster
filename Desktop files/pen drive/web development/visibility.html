@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            border: 2px solid red;
+            height: 600px;
+            width: 100%;
+        }
+        .box
+        {
+            border: 2px solid green;
+            height: 100px;
+            width: 100px;
+            margin: 5px;
+        }
+        #box1
+        {
+            background-color: aqua;
+            /* z-index: position types: static, relative, absolute, fixed, sticky
+            static is default position 
+               z- index will not work in static position
+             */
+             position: relative;
+             top: 60px;
+             z-index: 20;
+        }
+        #box2
+        {
+            z-index: 30;        
+            position: relative;
+            /* it will hide only the content but space will remain there
+            visibility: hidden;
+            */
+            /* it will hide content as well as the space 
+            display:none;
+            */
+            background-color: blue;
+        }
+        #box3
+        {
+            background-color: tomato;
+        }
+        #box4
+        {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">box1</div>
+        <div class="box" id="box2">box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+    </div>
+</body>
+</html>

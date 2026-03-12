@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="forget-container">
+        <div class="forget-card">
+            <div class="forget-header">
+                <h1>Forgot Password</h1>
+                <p id="forget-status-message"></p>
+            </div>
+
+            <div id="forget-email-section" class="forget-section active">
+                <div class="forget-input-group">
+                    <i class="icon ion-ios-mail"></i>
+                    <input type="email" id="forget-email" placeholder="Enter your email address">
+                </div>
+                <button id="forget-submit-email" class="forget-button">
+                    Get OTP
+                    <i class="icon ion-ios-arrow-forward"></i>
+                </button>
+                <a href="login.php" class="forget-login-link">
+                    <i class="icon ion-ios-arrow-back"></i>
+                    Back to Login
+                </a>
+            </div>
+
+            <div id="forget-otp-section" class="forget-section">
+                <div class="forget-email-display">
+                    <span id="forget-display-email"></span>
+                    <button id="forget-change-email" class="forget-link-button">Change</button>
+                </div>
+                <div class="forget-otp-boxes">
+                    <input type="text" maxlength="1" class="forget-otp-input">
+                    <input type="text" maxlength="1" class="forget-otp-input">
+                    <input type="text" maxlength="1" class="forget-otp-input">
+                    <input type="text" maxlength="1" class="forget-otp-input">
+                    <input type="text" maxlength="1" class="forget-otp-input">
+                    <input type="text" maxlength="1" class="forget-otp-input">
+                </div>
+                <div class="forget-timer">
+                    Time remaining: <span id="forget-countdown">01:00</span>
+                </div>
+                <button id="forget-verify-otp" class="forget-button">
+                    Verify OTP
+                    <i class="icon ion-ios-checkmark"></i>
+                </button>
+                <button id="forget-resend-otp" class="forget-button forget-secondary" disabled>
+                    Resend OTP
+                    <i class="icon ion-ios-refresh"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

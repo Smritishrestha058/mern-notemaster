@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Progress Bar</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Home" class="home">
+        <div id="navbar" class="navbar">
+            <div id="logo">LOGO</div>
+            <div class="list">
+                <a href="#Contact" onclick="showcontactform()">Contact Us</a>
+                <a href="#Services">Calendar</a>
+                <a href="#overview" onclick="showoverview()">Overview</a>
+                <a href="#Home" onclick="showDashboard()">Home</a>
+            </div>
+            <div id="Login">
+                <button id="btn">Log Out</button>
+            </div>
+        </div>
+        <div id="dashboard" class="dashboard">
+            <div class="box">
+                <p>Welcome <b>Smriti</b></p>
+            </div>
+            <div class="box2">
+                <div class="balance">
+                    <div class="balance-container">
+                        <p>Remaining Balance:</p>
+                    </div>
+                    <div class="balance-container">
+                        <p>Expenses:</p>
+                    </div>
+                    <div class="balance-container">
+                        <p>Income:</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="budget-container">
+                <div class="input-group">
+                    <label for="total-budget">Total Budget: </label>
+                    <input type="number" id="total-budget" placeholder="Enter total budget">
+                </div>
+            
+                <div class="input-group">
+                    <label for="amount-spent">Amount Spent: </label>
+                    <input type="number" id="amount-spent" placeholder="Enter amount spent">
+                </div>
+            
+                <button id="updatebtn" onclick="updateProgressBar()">Update Progress Bar</button>
+            
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            
+                <!-- <p id="progress-text"></p> -->
+            </div>
+        
+            <div class="transaction-container">
+                <div class="transaction-header">
+                    <div class="header">
+                        <p>Transaction History</p>
+                    </div>
+                    
+                    <div class="header">
+                        <button id="btn" onclick="openadd()">+ Add New</button>
+                    </div> 
+                </div>
+                
+                <div class="transaction">
+                    <div class="recent_transaction">
+                        <div class="transaction-group">
+        
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                        <div class="transaction-group">
+                            
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="add" id="add" style="display: none;">
+        <form id="form" action="action1.php" method="post">
+            <div class="form-header">
+                <a href="javascript:void(0)" class="closeform" onclick="closeadd()">×</a>
+                <h1 class="form-title">Add a new transaction</h1>
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="datetime-local" id="datetime" name="date" placeholder="Select DateTime">
+            </div>
+            <div class="input-group">
+                <label for="Account">Account</label><br>
+                <input type="text" name="account" placeholder="Select an account">
+            </div>
+            <div class="input-group">
+                <label for="Category">Category</label><br>
+                <input type="text" name="category" placeholder="Select a category">
+            </div>
+            <div class="input-group">
+                <label for="entry-type">Entry Type: </label><br>
+                <select id="entry-type" name="entry-type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="Amount">Amount</label><br>
+                <input type="number" name="amount" id="entry-amount" placeholder="0.00">
+            </div>
+            <div class="input-group">
+                <label for="notes">Notes</label><br>
+                <textarea name="notes" cols="20" rows="10" name="notes" id="entry-description"></textarea>
+            </div>
+            <button id="btn" onclick="addentry()">Submit</button>
+        </form>  
+    </div>
+    
+    <div class="overview" id="overview" style="display: none;">
+        <h3>Summary Chart</h3>
+        <canvas id="piechart"></canvas>
+        <canvas id="linechart"></canvas>
+
+    </div>
+
+
+    <div class="contact" id="contact" style="display: none;">
+        <div class="contact_form">
+          <h1>Contact Us</h1>
+          <form>
+            <div class="input-group">
+              <input type="text" name="Name" id="Name" placeholder="Name" required>
+            </div>
+            <div class="input-group">
+              <input type="email" name="Email" id="Email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+              <textarea cols="" rows="5" placeholder="Your message here"></textarea>
+            </div>
+            <input type="submit" class="Send" value="Send" name="Send">
+          </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>

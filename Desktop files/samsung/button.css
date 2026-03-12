@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    text-align: center;
+}
+p{
+    visibility: visible;
+    opacity: 1px;
+    font-size: 20px;
+}
+.box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid blue;
+    width: 350px;
+    height:150px;
+    border-radius: 10px;
+}
+.buy-button{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50px, -50px);
+    text-decoration: none;
+    border: 2px solid red;
+    border-radius: 10px;
+    color: white;
+    background-color: blueviolet;
+    visibility: hidden;
+}
+.box:hover .buy-button{
+    visibility: visible;
+}
+.box:hover p{
+    visibility: hidden;
+    opacity: 0px;
+}

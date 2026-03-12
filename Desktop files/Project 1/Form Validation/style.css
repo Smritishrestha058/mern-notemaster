@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    background-color: #2F3C7E;
+}
+form{
+    background-color: #FBEAEB;
+    height: 270px;
+    width: 360px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+}
+table{
+    padding: 15px;
+}

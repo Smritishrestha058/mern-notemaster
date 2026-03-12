@@ -1,0 +1,74 @@
+body
+{
+    background: url(image/logo image/img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left
+{
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+}
+.left img
+{
+    height: 70px;
+    width: 70px;
+    border-radius: 40px;
+}
+.left h1
+{
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    margin: 0px;
+}
+.middle
+{
+    display: block;
+    width: 55%;
+    margin: 35px auto;
+}
+.middle .navbar ul li
+{
+    display: inline-block;
+    list-style: none;
+}
+.middle .navbar ul li a
+{
+    text-decoration: none;
+    color: #e8e5e5;
+    font-size: 20px;
+    padding: 3px 20px;
+    font-family: 'Play', sans-serif;
+}
+.right
+{
+    
+    position: absolute;
+    right: 2px;
+    top: 16px;
+}
+.btn
+{
+    margin: 15px 3px;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Play';
+    background-color: #161616;
+    color: white;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
